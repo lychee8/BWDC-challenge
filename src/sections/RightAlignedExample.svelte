@@ -1,4 +1,6 @@
 <script>
+    // @ts-nocheck
+
     import * as Highcharts from "highcharts";
     import "highcharts/modules/exporting";
     import { Chart } from "@highcharts/svelte";
@@ -10,7 +12,7 @@
             type: "pie",
         },
         title: {
-            text: "An Example Pie Chart",
+            text: "Test",
         },
         plotOptions: {
             pie: {
@@ -42,10 +44,6 @@
                 name: "Group",
                 data: [
                     {
-                        name: "Group 1",
-                        y: 151,
-                    },
-                    {
                         name: "Group 2",
                         sliced: true,
                         selected: true,
@@ -62,6 +60,10 @@
                     {
                         name: "Group 5",
                         y: 77,
+                    },
+                    {
+                        name: "Group 6",
+                        y: 65,
                     },
                 ],
             },

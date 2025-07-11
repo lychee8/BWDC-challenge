@@ -1,4 +1,6 @@
 <script>
+    // @ts-nocheck
+
     import * as Highcharts from "highcharts";
     import "highcharts/modules/exporting";
     import { Chart } from "@highcharts/svelte";
@@ -81,6 +83,9 @@
                 {thirdSeriesVisible ? "Remove Group 3" : "Add Group 3"}
             </button>
             <div>
+                <ArticleText>
+                    <h1>Equity vs. Equality</h1>
+                </ArticleText>
                 <p>You can use Svelte to add and remove data from the chart.</p>
                 <p>
                     When you click the button above, a third group is toggled in
