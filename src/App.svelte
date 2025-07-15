@@ -1,12 +1,16 @@
 <script>
+  import TitleSection from "./sections/TitleSection.svelte";
   import Transition1 from "./sections/Transition1.svelte";
   import Transition2 from "./sections/Transition2.svelte";
-  import EquityEquality from "./sections/EquityEquality.svelte";
+  import IntroEquityEquality from "./sections/IntroEquityEquality.svelte";
+  import EqualitySection from "./sections/EqualitySection.svelte";
+  import EquitySection from "./sections/EquitySection.svelte";
   import Chart1 from "./sections/Chart1.svelte";
   import LeftAlignedExample from "./sections/LeftAlignedExample.svelte";
   import RightAlignedExample from "./sections/RightAlignedExample.svelte";
   import ImageExample from "./sections/ImageExample.svelte";
-  import TitleSection from "./sections/TitleSection.svelte";
+
+  import DisappearDuck from "./sections/DisappearDuck.svelte";
 </script>
 
 <main>
@@ -15,7 +19,7 @@
   <div
     class="tableauPlaceholder"
     id="viz1752197793637"
-    style="position: relative"
+    style="margin-left: 550px"
   >
     <noscript
       ><a href="#"
@@ -60,8 +64,17 @@
   </script>
   <Chart1 />
   <Transition2 />
-  <EquityEquality />
+  <IntroEquityEquality />
+  <EqualitySection />
+  <EquitySection />
   <RightAlignedExample />
   <LeftAlignedExample />
   <ImageExample />
+  <DisappearDuck />
 </main>
+
+<style>
+  .tableauPlaceholder {
+    align-items: center;
+  }
+</style>
