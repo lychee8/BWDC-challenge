@@ -11,15 +11,16 @@
   import ImageExample from "./sections/ImageExample.svelte";
 
   import DisappearDuck from "./sections/DisappearDuck.svelte";
+  import { _alignStartEnd } from "chart.js/helpers";
 </script>
 
-<main>
+<main class="body">
   <TitleSection />
   <Transition1 />
   <div
     class="tableauPlaceholder"
     id="viz1752197793637"
-    style="margin-left: 550px"
+    style="margin-left: 325px"
   >
     <noscript
       ><a href="#"
@@ -74,7 +75,7 @@
 </main>
 
 <style>
-  .tableauPlaceholder {
-    align-items: center;
+  .body {
+    background-color: #458883;
   }
 </style>

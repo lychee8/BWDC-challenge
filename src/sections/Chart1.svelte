@@ -54,14 +54,18 @@
 </script>
 
 <div>
-    <Scroller layout="right">
+    <Scroller layout="chart1">
         {#snippet sticky()}
             <div class="chart">
                 <Chart {options} highcharts={Highcharts} />
             </div>
+            <img
+                src="https://images.unsplash.com/photo-1686213011376-d20df949af59?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJsYWNrJTIwd29tZW4lMjBncmFkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+            />
         {/snippet}
 
         {#snippet scrolly()}
+            <div class = "introInfo">
             <ArticleText>
                 <h1>
                     One of the boundaries/challenges Black women face is less
@@ -70,25 +74,24 @@
             </ArticleText>
 
             <ArticleText>
-                In order for Black Women to get jobs in STEM, they would need to
-                further their education beyond high school. However, in the
-                figure to the left, even in the states with the largest Black
-                population, the amount of women who have attained higher
-                education is less than the amount of white men. Even though
-                there is a larger Black population, the amount of white males is
-                still significantly larger than the Black Female amount.
+                <p>
+                    In order for Black Women to get jobs in STEM, they would
+                    need to further their education beyond high school. However,
+                    in the figure to the left, even in the states with the
+                    largest Black population, the percentage of women who have
+                    attained higher education is less than the percentage of
+                    white men. The proportion of black women who have attained
+                    higher education is not proportionate to their population.
+                    Since the Black population in these states is higher, the
+                    amount of black women who attained high education should be
+                    proportionate, but this is not the case.
+                </p>
             </ArticleText>
 
             <ArticleText>
-                You can use this template as a starting point for your project.
-                Or, if you want to build something from scratch, you can use it
-                as a reference for specific functionality.
+                <h1>So now this begs the question...Why does this happen?</h1>
             </ArticleText>
-
-            <ArticleText>
-                This is just one way that scrollytelling can look. If you use
-                this template, be sure to modify it and make it your own!
-            </ArticleText>
+            </div>
         {/snippet}
     </Scroller>
 </div>
@@ -107,3 +110,20 @@
         >
     {/snippet}
 </Scroller> -->
+
+<style>
+    .chart {
+        width: 100%;
+        height: 100%;
+        background-color: #458883;
+    }
+    img{
+        background-color: #458883;
+    }
+    p {
+        font-size: 2em;
+    }
+    .introInfo{
+        background-color: #458883;
+    }
+</style>

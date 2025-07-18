@@ -18,30 +18,28 @@
     ];
 </script>
 
-<div>
+<div class="body">
     <Scroller layout="left">
         {#snippet sticky()}
             <div>
                 <ArticleText>
                     <h1>Equity vs. Equality</h1>
-                    <img
-                        class="Pic1"
-                        src="https://images.unsplash.com/photo-1582719471257-05db68be5ae5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QmxhY2slMjBmZW1hbGUlMjBzY2llbnRpc3R8ZW58MHx8MHx8fDA%3D"
-                    />
                 </ArticleText>
-                <p>
-                    Each runner has been placed at a different staring point
-                    based on their answers
-                </p>
-                <p>
-                    Now each runner must start the race from the indicated spot
-                    and the winner is the person who gets to the finish line
-                    first.
-                </p>
-                <p>
-                    Seeing where you start in relation to others, do you feel
-                    that where you are starting is fair?
-                </p>
+                <ArticleText>
+                    <p>
+                        Each runner has been placed at a different staring point
+                        based on their answers
+                    </p>
+                    <p>
+                        Now each runner must start the race from the indicated
+                        spot and the winner is the person who gets to the finish
+                        line first.
+                    </p>
+                    <p>
+                        Seeing where you start in relation to others, do you
+                        feel that where you are starting is fair?
+                    </p>
+                </ArticleText>
             </div>
         {/snippet}
 
@@ -82,10 +80,10 @@
             </ArticleText>
         {/snippet}
     </Scroller>
-
-    <style>
-        .Pic1 {
-            width: 100%;
-        }
-    </style>
 </div>
+
+<style>
+    .Pic1 {
+        width: 100%;
+    }
+</style>
