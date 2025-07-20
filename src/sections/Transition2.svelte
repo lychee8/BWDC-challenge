@@ -2,6 +2,154 @@
     import { fade, fly } from "svelte/transition";
     import Scroller from "../lib/Scroller.svelte";
     import ObservedArticleText from "../lib/ObservedArticleText.svelte";
+    import ArticleText from "../lib/ArticleText.svelte";
+
+    let scientistIsVisible = $state(false);
+    let familyIsVisible = $state(false);
+
+    const options = {
+        threshold: [0.85, 0.95],
+    };
+
+    const simpleCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            const elem = entry.target;
+
+            if (entry.intersectionRatio >= 0.9) {
+                // "active" state
+                elem.style.backgroundColor = "#e3ff00";
+            } else if (entry.intersectionRatio < 0.9) {
+                // "inactive" state
+                elem.style.backgroundColor = "#888888";
+            }
+        });
+    };
+
+    const showscientistCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            const elem = entry.target;
+
+            if (entry.intersectionRatio >= 0.9) {
+                elem.style.backgroundColor = "#e3ff00";
+                scientistIsVisible = true;
+            } else if (entry.intersectionRatio < 0.9) {
+                elem.style.backgroundColor = "#888888";
+            }
+        });
+    };
+
+    const showfamilyCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            const elem = entry.target;
+
+            if (entry.intersectionRatio >= 0.9) {
+                elem.style.backgroundColor = "#e3ff00";
+                familyIsVisible = true;
+            } else if (entry.intersectionRatio < 0.9) {
+                elem.style.backgroundColor = "#888888";
+            }
+        });
+    };
+
+    const removescientistCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            const elem = entry.target;
+
+            if (entry.intersectionRatio >= 0.9) {
+                elem.style.backgroundColor = "#e3ff00";
+                scientistIsVisible = false;
+            } else if (entry.intersectionRatio < 0.9) {
+                elem.style.backgroundColor = "#888888";
+            }
+        });
+    };
+
+    const removefamilyCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            const elem = entry.target;
+
+            if (entry.intersectionRatio >= 0.9) {
+                elem.style.backgroundColor = "#e3ff00";
+                familyIsVisible = false;
+            } else if (entry.intersectionRatio < 0.9) {
+                elem.style.backgroundColor = "#888888";
+            }
+        });
+    };
+</script>
+
+<div>
+    <Scroller layout="left">
+        {#snippet sticky()}
+            <div>
+                {#if scientistIsVisible}
+                    <img
+                        class="scientist-img"
+                        src="scientist.png"
+                        alt="Female scientist"
+                        in:fly={{ y: 200, duration: 2000 }}
+                        out:fade
+                    />
+                {/if}
+                {#if familyIsVisible}
+                    <img
+                        class="family-img"
+                        src="family.png"
+                        alt="Mother and daughter"
+                        in:fly={{ y: 200, duration: 2000 }}
+                        out:fade
+                    />
+                {/if}
+                <br />
+            </div>
+        {/snippet}
+
+        {#snippet scrolly()}
+            <ObservedArticleText callback={showfamilyCallback} {options}>
+                <h1>
+                    These two charts were examples of a problem that has been
+                    debated on for a while, especially in the United States.
+                    There are generational difficulties and challenges that have
+                    affected current generations.
+                </h1>
+            </ObservedArticleText>
+
+            <ObservedArticleText callback={removefamilyCallback} {options}>
+                <h1>
+                    Interventions, such as affirmative action, are necessary to
+                    obtain equity and in the future equality.
+                </h1>
+            </ObservedArticleText>
+
+            <ObservedArticleText callback={removescientistCallback} {options}>
+                When this box scrolls into view, the callback will set
+                <code>duckIsVisible</code> to <code>false</code>.
+                <br /><br />
+                Svelte then automatically updates the page (more precisely, the DOM)
+                and removes the duck component.
+                <br /><br />
+                The Svelte transition
+                <code>{"out:fade"}</code>
+                handles animating the transition.
+            </ObservedArticleText>
+
+            <ObservedArticleText callback={simpleCallback} {options}>
+                Pretty slick, huh?
+                <br /><br />
+                🤔
+                <strong
+                    >How might you use a transition like this for emotional
+                    impact in your final project?</strong
+                >
+            </ObservedArticleText>
+        {/snippet}
+    </Scroller>
+</div>
+
+<!-- <script>
+    import { fade, fly } from "svelte/transition";
+    import Scroller from "../lib/Scroller.svelte";
+    import ObservedArticleText from "../lib/ObservedArticleText.svelte";
 
     let scientistIsVisible = $state(false);
 
@@ -68,7 +216,7 @@
         {/snippet}
 
         {#snippet scrolly()}
-            <ObservedArticleText callback={removeScientistCallback} {options}>
+            <ObservedArticleText callback={simpleCallback} {options}>
                 <h1>
                     These two charts were examples of a problem that has been
                     debated on for a while, especially in the United States.
@@ -79,11 +227,10 @@
                 </h1>
 
                 <br /><br />
-                Svelte transitions are built-in, easy to use animations that elevate
-                the user experience as elements change on the website. Try them out
-                in the tutorial
-                <a href="https://svelte.dev/tutorial/svelte/transition">here</a>
-                (and the next few pages).
+                <h1>
+                    Before we dive into this statement we need to understand
+                    an important concept...
+                </h1>
                 <br /><br />
                 You can also
                 <a
@@ -94,15 +241,7 @@
             </ObservedArticleText>
 
             <ObservedArticleText callback={showScientistCallback} {options}>
-                When this box scrolls into view, the callback will set a boolean
-                variable, <code>duckIsVisible</code> to
-                <code>true</code>.
-                <br /><br />
-                Because <code>duckIsVisible</code> is declared as
-                <a href="https://svelte.dev/tutorial/svelte/state"> state</a>
-                , and the duck image is only rendered conditionally if
-                <code>duckIsVisible==true</code>, Svelte automatically updates
-                the page and adds the duck component.
+                <h1>Equity vs. Equality</h1>
                 <br /><br />
                 The svelte transition
                 <code>{"in:fly={{ y: 200, duration: 2000 }}"}</code>
@@ -132,7 +271,7 @@
             </ObservedArticleText>
         {/snippet}
     </Scroller>
-</div>
+</div> -->
 
 <!-- <script>
     import { fade, fly } from "svelte/transition";
@@ -222,7 +361,7 @@
             <ArticleText callback={showScientistCallback} {options}>
                 <h1>
                     Before we dive into this statement we need to understand
-                    animport concept...
+                    an important concept...
                 </h1>
             </ArticleText>
 
@@ -294,8 +433,17 @@
     }
 </style> -->
 
-<style>
+<!-- <style>
     .scientist-img {
         margin: 0px auto;
+    }
+</style> -->
+
+<style>
+    .family-img {
+        width: 50%;
+    }
+    .scientist-img {
+        width: 50%;
     }
 </style>
