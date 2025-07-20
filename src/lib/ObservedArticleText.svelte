@@ -39,5 +39,4 @@
         padding: 20px;
         box-shadow: 16px 16px black;
     }
-    
 </style>
