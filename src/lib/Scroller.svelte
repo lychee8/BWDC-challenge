@@ -14,14 +14,14 @@
 
 <style>
     .wrapper {
-        background-color: #f7f5eb;
         padding: min(100vh, 30rem) 1rem;
         border-style: solid;
-        border-color: #4096fa;
+        border-color: #458883;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
+        background-color: #458883;
     }
 
     .left .scrolly {
@@ -43,6 +43,8 @@
         display: flex;
         flex-direction: column;
         flex: 1 1; /* Allows growing, shrinking */
+        background-color: #458883;
+
     }
 
     .sticky {
@@ -53,10 +55,12 @@
         align-items: center;
         justify-content: center;
         z-index: 0;
+        background-color: #458883;
     }
 
     .scrolly {
         z-index: 1;
+        background-color: #458883;
     }
 
     @media (max-width: 768px) {

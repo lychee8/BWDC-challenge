@@ -32,12 +32,14 @@
     .article-text {
         margin: 50vh auto;
         width: 50%;
-        background-color: #b99095;
-        color: #458883;
-        border: solid #8427c9 3px;
+        background-color:  #b99095; 
+        color: white;
+        border: solid #fcb5ac 3px;
         border-radius: 20px;
         padding: 20px;
         box-shadow: 16px 16px black;
+        font-family: "Times New Roman", Times, serif;
     }
-    
 </style>
+
+
