@@ -65,32 +65,38 @@
         {/snippet}
 
         {#snippet scrolly()}
-            <div class = "introInfo">
-            <ArticleText>
-                <h1>
-                    One of the boundaries/challenges Black women face is less
-                    access to attain higher education
-                </h1>
-            </ArticleText>
+            <div>
+                <ArticleText>
+                    <h1>
+                        One of the boundaries/challenges Black women face is
+                        less access to attain higher education
+                    </h1>
+                </ArticleText>
 
-            <ArticleText>
-                <p>
-                    In order for Black Women to get jobs in STEM, they would
-                    need to further their education beyond high school. However,
-                    in the figure to the left, even in the states with the
-                    largest Black population, the percentage of women who have
-                    attained higher education is less than the percentage of
-                    white men. The proportion of black women who have attained
-                    higher education is not proportionate to their population.
-                    Since the Black population in these states is higher, the
-                    amount of black women who attained high education should be
-                    proportionate, but this is not the case.
-                </p>
-            </ArticleText>
+                <ArticleText>
+                    <p>
+                        <strong>
+                            In order for Black Women to get jobs in STEM, they
+                            would need to further their education beyond high
+                            school. However, in the figure to the left, even in
+                            the states with the largest Black population, the
+                            percentage of women who have attained higher
+                            education is less than the percentage of white men.
+                            The proportion of black women who have attained
+                            higher education is not proportionate to their
+                            population. Since the Black population in these
+                            states is higher, the amount of black women who
+                            attained high education should be proportionate, but
+                            this is not the case.
+                        </strong>
+                    </p>
+                </ArticleText>
 
-            <ArticleText>
-                <h1>So now this begs the question...Why does this happen?</h1>
-            </ArticleText>
+                <ArticleText>
+                    <h1>
+                        So now this begs the question...Why does this happen?
+                    </h1>
+                </ArticleText>
             </div>
         {/snippet}
     </Scroller>
@@ -117,13 +123,10 @@
         height: 100%;
         background-color: #458883;
     }
-    img{
+    img {
         background-color: #458883;
     }
     p {
         font-size: 2em;
-    }
-    .introInfo{
-        background-color: #458883;
     }
 </style>

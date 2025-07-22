@@ -6,22 +6,15 @@
   import EqualitySection from "./sections/EqualitySection.svelte";
   import EquitySection from "./sections/EquitySection.svelte";
   import Chart1 from "./sections/Chart1.svelte";
-  import LeftAlignedExample from "./sections/LeftAlignedExample.svelte";
-  import RightAlignedExample from "./sections/RightAlignedExample.svelte";
-  import ImageExample from "./sections/ImageExample.svelte";
+  import MainIdeaIntro from "./sections/MainIdeaIntro.svelte";
 
-  import DisappearDuck from "./sections/DisappearDuck.svelte";
   import { _alignStartEnd } from "chart.js/helpers";
 </script>
 
 <main class="body">
   <TitleSection />
   <Transition1 />
-  <div
-    class="tableauPlaceholder"
-    id="viz1752197793637"
-    style="margin-left: 325px"
-  >
+  <div class="tableauPlaceholder" id="viz1752197793637" style="margin: 0 auto">
     <noscript
       ><a href="#"
         ><img
@@ -68,10 +61,7 @@
   <IntroEquityEquality />
   <EqualitySection />
   <EquitySection />
-  <RightAlignedExample />
-  <LeftAlignedExample />
-  <ImageExample />
-  <DisappearDuck />
+  <MainIdeaIntro />
 </main>
 
 <style>
